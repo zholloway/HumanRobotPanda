@@ -18,18 +18,26 @@ namespace HumanRobotPanda
             peter.DisplayGreeting();
             mary.GoToSleep();
             mary.IsAsleep();
+            Console.WriteLine($"Mary is asleep: {mary.SleepStatus}");
 
             //create pandas
             var mrFuzzy = new Panda("Mr.Fuzzy");
             var ecoBear = new Panda("Recycla");
 
             //panda check
+            mrFuzzy.Eat("bamboo");
+            ecoBear.DisplayGreeting();
 
             //create robots
             var robut1 = new Robot("R2D2", false);
             var robut2 = new Robot("GLORNOK", true);
 
             //robot check
+            robut1.StartUp();
+            Console.WriteLine($"{robut1.Name} is powered on: {robut1.IsAsleep()}");
+            robut1.ShutDown();
+            Console.WriteLine($"{robut1.Name} is powered on: {robut1.IsAsleep()}");
+            Console.WriteLine($"{robut2.Name} is a Terminator: {robut2.IsTerminator()}");
 
             //create lists
             var everything = new List<Being>
@@ -53,6 +61,7 @@ namespace HumanRobotPanda
                 Being individual = being as Being;
                 Console.WriteLine(individual.Name);
             }
+
 
             Console.ReadLine();
         }

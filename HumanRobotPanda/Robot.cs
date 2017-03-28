@@ -39,14 +39,7 @@ namespace HumanRobotPanda
 
         public override bool IsAsleep()
         {
-            if (PowerOn == false)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return PowerOn;
         }
 
         public override void DisplayGreeting()
