@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace HumanRobotPanda
 {
-    class Panda : Being, LivingFunctions
+    class Panda : Being, ILivingFunctions
     {
         private bool SleepStatus { get; set; }
 
         public Panda(string name)
         {
             this.Name = name;
-            Console.WriteLine($"{this.Name} the {this.GetType()} has been created.");
+            Console.WriteLine($"{this.Name} the {this.GetType().Name} has been created.");
         }
 
         public void Eat(string food)
@@ -36,6 +36,11 @@ namespace HumanRobotPanda
         {
             this.SleepStatus = false;
             Console.WriteLine($"{this.Name} woke up!");
+        }
+
+        public override void DisplayGreeting()
+        {
+            Console.WriteLine($"{this.Name} yawns and waves at you :)");
         }
     }
 }

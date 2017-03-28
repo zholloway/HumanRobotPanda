@@ -12,16 +12,16 @@ namespace HumanRobotPanda
 
         public Being(){}
 
-        public virtual void DisplayName()
+        public virtual string DisplayName()
         {
-            Console.WriteLine(this.Name);
+            return this.Name;
         }
 
         public virtual void DisplayGreeting(){}
 
         public void DisplayType()
         {
-            Console.WriteLine($"{this.Name} is a {this.GetType()}.");
+            Console.WriteLine($"{this.Name} is a {this.GetType().Name}.");
         }
 
         public virtual bool IsAsleep()

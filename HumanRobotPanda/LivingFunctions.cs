@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HumanRobotPanda
 {
-    interface LivingFunctions
+    interface ILivingFunctions
     {
         void Eat(string food);
 

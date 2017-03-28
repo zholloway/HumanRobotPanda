@@ -17,12 +17,12 @@ namespace HumanRobotPanda
             return this.TerminatorStatus;
         }
 
-        public Robot(bool isATerminator)
+        public Robot(string name, bool isATerminator)
         {
             this.TerminatorStatus = isATerminator;
-            Console.WriteLine("Another superior being created. What is its name?");
-            this.Name = Console.ReadLine();
-            Console.WriteLine($"///BEEP BOOP {this.Name} HAS AWOKEN///");
+            this.Name = name;
+            Console.WriteLine("Another superior being created.");
+            Console.WriteLine($"///BEEP BOOP {name} HAS AWOKEN///");
         }
 
         public void StartUp()
@@ -47,6 +47,11 @@ namespace HumanRobotPanda
             {
                 return false;
             }
+        }
+
+        public override void DisplayGreeting()
+        {
+            Console.WriteLine($"///I AM {this.Name}. I WILL DESTROY YOU, HUMAN.///");
         }
     }
 }
