@@ -6,23 +6,27 @@ using System.Threading.Tasks;
 
 namespace HumanRobotPanda
 {
-    class Being
+    abstract class Being
     {
         public string Name { get; set; }
 
-        public bool IsAsleep { get; set; }
-
-        public Being()
-        {
-        }
+        public Being(){}
 
         public virtual void DisplayName()
         {
             Console.WriteLine(this.Name);
         }
 
-        public virtual void DisplayGreeting()
+        public virtual void DisplayGreeting(){}
+
+        public void DisplayType()
         {
+            Console.WriteLine($"{this.Name} is a {this.GetType()}.");
+        }
+
+        public virtual bool IsAsleep()
+        {
+            return true;
         }
     }
 }

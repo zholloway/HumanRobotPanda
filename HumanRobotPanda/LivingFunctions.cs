@@ -8,5 +8,10 @@ namespace HumanRobotPanda
 {
     interface LivingFunctions
     {
+        void Eat(string food);
+
+        void GoToSleep();
+
+        void WakeUp();
     }
 }

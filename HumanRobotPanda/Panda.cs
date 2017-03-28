@@ -6,7 +6,36 @@ using System.Threading.Tasks;
 
 namespace HumanRobotPanda
 {
-    class Panda
+    class Panda : Being, LivingFunctions
     {
+        private bool SleepStatus { get; set; }
+
+        public Panda(string name)
+        {
+            this.Name = name;
+            Console.WriteLine($"{this.Name} the {this.GetType()} has been created.");
+        }
+
+        public void Eat(string food)
+        {
+            Console.WriteLine($"{this.Name} eats the {food}.");
+        }
+
+        public override bool IsAsleep()
+        {
+            return SleepStatus;
+        }
+
+        public void GoToSleep()
+        {
+            this.SleepStatus = true;
+            Console.WriteLine($"{this.Name} went to sleep!");
+        }
+
+        public void WakeUp()
+        {
+            this.SleepStatus = false;
+            Console.WriteLine($"{this.Name} woke up!");
+        }
     }
 }
